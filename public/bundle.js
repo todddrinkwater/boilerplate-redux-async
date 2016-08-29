@@ -23251,8 +23251,7 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	exports.receivePosts = undefined;
-	exports.fetchPosts = fetchPosts;
+	exports.fetchPosts = exports.receivePosts = undefined;
 	
 	var _superagent = __webpack_require__(201);
 	
@@ -23260,7 +23259,7 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	var receivePosts = exports.receivePosts = function receivePosts(posts) {
+	var receivePosts = function receivePosts(posts) {
 	  return {
 	    type: 'RECEIVE_POSTS',
 	    posts: posts.map(function (post) {
@@ -23269,7 +23268,7 @@
 	  };
 	};
 	
-	function fetchPosts(subreddit) {
+	var fetchPosts = function fetchPosts(subreddit) {
 	  return function (dispatch) {
 	    _superagent2.default.get('api/v1/' + subreddit + '/posts').end(function (err, res) {
 	      if (err) {
@@ -23279,7 +23278,10 @@
 	      dispatch(receivePosts(res.body.posts));
 	    });
 	  };
-	}
+	};
+	
+	exports.receivePosts = receivePosts;
+	exports.fetchPosts = fetchPosts;
 
 /***/ },
 /* 201 */

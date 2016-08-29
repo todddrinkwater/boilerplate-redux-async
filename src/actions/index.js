@@ -1,13 +1,13 @@
 import request from 'superagent'
 
-export const receivePosts = (posts) => {
+const receivePosts = (posts) => {
   return {
     type: 'RECEIVE_POSTS',
     posts: posts.map(post => post)
   }
 }
 
-export function fetchPosts (subreddit) {
+const fetchPosts = (subreddit) => {
   return (dispatch) => {
     request
       .get(`api/v1/${subreddit}/posts`)
@@ -20,3 +20,5 @@ export function fetchPosts (subreddit) {
       })
   }
 }
+
+export { receivePosts, fetchPosts }
