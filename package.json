@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "description": "React Redux with simple async action",
   "scripts": {
-    "start": "webpack-dev-server --hot --inline"
+    "start": "webpack-dev-server --hot --inline",
+    "server": "node src/server/index.js"
   },
   "keywords": [
     "react",
@@ -37,8 +38,7 @@
     ]
   },
   "dependencies": {
-    "body-parser": "^1.17.1",
-    "cors": "^2.8.3",
-    "express": "^4.15.2"
+    "express": "^4.15.2",
+    "path": "^0.12.7"
   }
 }
