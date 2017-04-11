@@ -11,7 +11,6 @@ router.get('/', function (req, res) {
      if (err) {
        res.status(500).send(err)
      } else {
-       console.log(apires.text);
        res.json(JSON.parse(apires.text))
      }
    })

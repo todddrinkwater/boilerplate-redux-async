@@ -1,7 +1,7 @@
 import request from 'superagent'
 
 export const receiveArtist = (posts) => {
-  console.log("hello", posts)
+  console.log("hello", posts[0].trackName)
   let result = {
     type: 'RECEIVE_ARTIST',
     songs: posts.map(post => post.trackName)
@@ -18,7 +18,6 @@ export function fetchArtist (artist) {
           console.error(err.message)
           return
         }
-        console.log(res);
         dispatch(receiveArtist(JSON.parse(res.text).results))
       })
   }
