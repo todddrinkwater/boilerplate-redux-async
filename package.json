@@ -4,6 +4,7 @@
   "description": "React Redux with simple async action",
   "scripts": {
     "start": "webpack-dev-server --hot --inline",
+    "dev": "nodemon src/server/index.js",
     "server": "node src/server/index.js"
   },
   "keywords": [
